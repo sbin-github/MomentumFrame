@@ -40,7 +40,7 @@ In our experience, it will give satsfying results after about 15 epochs in curre
 
 We recommend you using rtx-3090 or other gpus with larger memory size.
 
-If your PC ran out memory, you may modify the "batch_size" hyperparameter.
+You may modify the "batch_size" hyperparameter if your GPU ran out of memory.
 
 Please note that you may need to change learning rates also in that case.
 
