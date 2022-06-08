@@ -38,7 +38,7 @@ Please enjoy your training with "solvers/learning/4_visualization.ipynb".
 
 In our experience, it will give satsfying results after about 15 epochs in current setup.
 
-We recommand you using rtx-3090 or other gpus with larger memory size.
+We recommend you using rtx-3090 or other gpus with larger memory size.
 
 If your PC ran out memory, you may modify the "batch_size" hyperparameter.
 
