@@ -22,7 +22,7 @@ You can do it by running "solvers/1_generate_simulation_data.py".
 
 It will automatically generate momentum-frame dataset in .npy format.
 
-You need at least 350 dataset to run the code without modifications.
+You need at least 350 datasets to run the code without modifications.
 
 
 ## 2. Generate Pytorch Tensor Trainset/Testset
@@ -36,11 +36,11 @@ If your .npy data are located correctly, it will save .pt datasets.
 
 Enjoy your training with "solvers/learning/3_training.ipynb".
 
-In our experience, it will give satsfying results after about 15 epochs in current setup.
+In our experience, it will give satisfying results after about 15 epochs in the current setup.
 
-We recommend you using rtx-3090 or other gpus with larger memory size.
+We recommend you use RTX-3090 or other GPUs with larger memory sizes.
 
-You may modify the "batch_size" hyperparameter if your GPU ran out of memory.
+You may modify the "batch_size" hyperparameter if your GPU runs out of memory.
 
 Please note that you may need to change learning rates also in that case.
 
@@ -51,4 +51,4 @@ You can use "solvers/learning/4_visualization.ipynb".
 
 It generates sequence images or gif files.
 
-Please note that they uses your testset, not trainingset.
+Please note that they use your testset, not the trainingset.
