@@ -5,7 +5,7 @@
 
 From this directory, run below in your terminal:
 
-$ mkdir solvers/data/model & mkdir solvers/data/gif_deeper & mkdir solvers/data/npy
+<code>$ mkdir solvers/data/model & mkdir solvers/data/gif_deeper & mkdir solvers/data/npy</code>
 
 And please make sure that you have python modules in "requirements.txt".
 
@@ -18,7 +18,7 @@ Please visit "https://docs.taichi.graphics/docs/" if you want to know about taic
 
 You can do it by running "solvers/1_generate_simulation_data.py".
 
-** Please run it in the local directory! **
+**Please run it in the local directory!**
 
 It will automatically generate momentum-frame dataset in .npy format.
 
