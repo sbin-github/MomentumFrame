@@ -34,7 +34,7 @@ If your .npy data are located correctly, it will save .pt datasets.
 
 ## 3. Training
 
-Please enjoy your training with "solvers/learning/4_visualization.ipynb".
+Enjoy your training with "solvers/learning/4_visualization.ipynb".
 
 In our experience, it will give satsfying results after about 15 epochs in current setup.
 
