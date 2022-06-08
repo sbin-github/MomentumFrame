@@ -1,0 +1,6 @@
+torch >= 1.10
+taichi == 1.0.2
+matplotlib
+numpy
+celluloid
+torchvision

@@ -1,11 +1,20 @@
-# 0. Generate Directories
+# Momentum-frame Based 2D Physix
+
+
+## 0. Prerequisites
 
 From this directory, run below in your terminal:
 
 $ mkdir solvers/data/model & mkdir solvers/data/gif_deeper & mkdir solvers/data/npy
 
+And please make sure that you have python modules in "requirements.txt".
 
-# 1. Generate Ground-truth from Taichi Simulation
+We do not recommend using "-r install", as it includes pytorch and taichi.
+
+Please visit "https://docs.taichi.graphics/docs/" if you want to know about taichi for python.
+
+
+## 1. Generate Ground-truth from Taichi Simulation
 
 You can do it by running "solvers/1_generate_simulation_data.py".
 
@@ -16,14 +25,14 @@ It will automatically generate momentum-frame dataset in .npy format.
 You need at least 350 dataset to run the code without modifications.
 
 
-# 2. Generate Pytorch Tensor Trainset/Testset
+## 2. Generate Pytorch Tensor Trainset/Testset
 
 Please use "solvers/learning/2_generate_pt_dataset.ipynb".
 
 If your .npy data are located correctly, it will save .pt datasets.
 
 
-# 3. Training
+## 3. Training
 
 Please enjoy your training with "solvers/learning/4_visualization.ipynb".
 
@@ -36,7 +45,7 @@ If your PC ran out memory, you may modify the "batch_size" hyperparameter.
 Please note that you may need to change learning rates also in that case.
 
 
-# 4. Visualization
+## 4. Visualization
 
 You can use "solvers/learning/4_visualization.ipynb".
 
