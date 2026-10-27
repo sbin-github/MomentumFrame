@@ -1,54 +1,56 @@
-# Momentum-frame Based 2D Physix
-
+# Momentum-Frame-Based 2D Physics
 
 ## 0. Prerequisites
 
-From this directory, run below in your terminal:
+Create the required directories from the project root:
 
-<code>$ mkdir solvers/data/model & mkdir solvers/data/gif_deeper & mkdir solvers/data/npy</code>
+```bash
+mkdir -p solvers/data/{model,gif_deeper,npy}
+```
 
-And please make sure that you have python modules in "requirements.txt".
+Install the dependencies listed in `requirements.txt`. We recommend installing them individually rather than using `pip install -r requirements.txt`, as the file includes PyTorch and Taichi.
 
-We do not recommend using "-r install", as it includes pytorch and taichi.
+For Taichi documentation, visit [Taichi Docs](https://docs.taichi-lang.org/).
 
-Please visit "https://docs.taichi.graphics/docs/" if you want to know about taichi for python.
+## 1. Generate Simulation Data
 
+Run `solvers/1_generate_simulation_data.py` from the project root to generate ground-truth momentum-frame datasets in `.npy` format.
 
-## 1. Generate Ground-truth from Taichi Simulation
+**At least 350 datasets are required** with the default configuration.
 
-You can do it by running "solvers/1_generate_simulation_data.py".
+## 2. Prepare Training and Test Datasets
 
-**Please run it in the local directory!**
-
-It will automatically generate momentum-frame dataset in .npy format.
-
-You need at least 350 datasets to run the code without modifications.
-
-
-## 2. Generate Pytorch Tensor Trainset/Testset
-
-Please use "solvers/learning/2_generate_pt_dataset.ipynb".
-
-If your .npy data are located correctly, it will save .pt datasets.
-
+Run `solvers/learning/2_generate_pt_dataset.ipynb` to convert the generated `.npy` files into PyTorch `.pt` datasets.
 
 ## 3. Training
 
-Enjoy your training with "solvers/learning/3_training.ipynb".
+Run `solvers/learning/3_training.ipynb` to train the model.
 
-In our experience, it will give satisfying results after about 15 epochs in the current setup.
+Training typically achieves satisfactory results within approximately **15 epochs**.
 
-We recommend you use RTX-3090 or other GPUs with larger memory sizes.
-
-You may modify the "batch_size" hyperparameter if your GPU runs out of memory.
-
-Please note that you may need to change learning rates also in that case.
-
+An RTX 3090 or a GPU with comparable or greater memory is recommended. If GPU memory is insufficient, reduce `batch_size` and adjust the learning rate accordingly.
 
 ## 4. Visualization
 
-You can use "solvers/learning/4_visualization.ipynb".
+Run `solvers/learning/4_visualization.ipynb` to generate image sequences or GIF animations.
 
-It generates sequence images or gif files.
+**Note:** Visualizations use the test dataset, not the training dataset.
 
-Please note that they use your testset, not the trainingset.
+## 5. Quick Start: End-to-End
+
+From the project root, run:
+
+```bash
+# 1. Create directories
+mkdir -p solvers/data/{model,gif_deeper,npy}
+
+# 2. Generate simulation data
+python solvers/1_generate_simulation_data.py
+
+# 3. Prepare datasets, train, and visualize
+jupyter nbconvert --to notebook --execute --inplace solvers/learning/2_generate_pt_dataset.ipynb
+jupyter nbconvert --to notebook --execute --inplace solvers/learning/3_training.ipynb
+jupyter nbconvert --to notebook --execute --inplace solvers/learning/4_visualization.ipynb
+```
+
+Ensure all dependencies are installed before execution. The commands assume the notebooks support non-interactive execution and use paths relative to the project root.
