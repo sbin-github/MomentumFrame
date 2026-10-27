@@ -1,4 +1,5 @@
 # Momentum-Frame-Based 2D Physics
+KAIST CS570 Project (2022 Spring)
 
 ## 0. Prerequisites
 
